@@ -1,0 +1,2 @@
+/usr/bin/ar qc libOLIB.a CMakeFiles/OLIB.dir/other_lib.cpp.o
+/usr/bin/ranlib libOLIB.a
