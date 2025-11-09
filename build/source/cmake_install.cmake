@@ -1,4 +1,4 @@
-# Install script for directory: /mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-Udemy
+# Install script for directory: /mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-Udemy/source
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,21 +44,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-Udemy/build/source/cmake_install.cmake")
+  include("/mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-Udemy/build/source/my_lib/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-Udemy/build/app/cmake_install.cmake")
+  include("/mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-Udemy/build/source/other_lib/cmake_install.cmake")
 endif()
 
-if(CMAKE_INSTALL_COMPONENT)
-  set(CMAKE_INSTALL_MANIFEST "install_manifest_${CMAKE_INSTALL_COMPONENT}.txt")
-else()
-  set(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
-endif()
-
-string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
-       "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-Udemy/build/${CMAKE_INSTALL_MANIFEST}"
-     "${CMAKE_INSTALL_MANIFEST_CONTENT}")

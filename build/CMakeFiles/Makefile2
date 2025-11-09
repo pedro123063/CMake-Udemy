@@ -63,99 +63,161 @@ CMAKE_BINARY_DIR = "/mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/Library.dir/all
-all: CMakeFiles/OLIB.dir/all
-all: CMakeFiles/Exec.dir/all
+all: source/all
+all: app/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall:
+preinstall: source/preinstall
+preinstall: app/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/Library.dir/clean
-clean: CMakeFiles/OLIB.dir/clean
-clean: CMakeFiles/Exec.dir/clean
+clean: source/clean
+clean: app/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/Library.dir
+# Directory level rules for directory app
+
+# Recursive "all" directory target.
+app/all: app/CMakeFiles/Exec.dir/all
+.PHONY : app/all
+
+# Recursive "preinstall" directory target.
+app/preinstall:
+.PHONY : app/preinstall
+
+# Recursive "clean" directory target.
+app/clean: app/CMakeFiles/Exec.dir/clean
+.PHONY : app/clean
+
+#=============================================================================
+# Directory level rules for directory source
+
+# Recursive "all" directory target.
+source/all: source/my_lib/all
+source/all: source/other_lib/all
+.PHONY : source/all
+
+# Recursive "preinstall" directory target.
+source/preinstall: source/my_lib/preinstall
+source/preinstall: source/other_lib/preinstall
+.PHONY : source/preinstall
+
+# Recursive "clean" directory target.
+source/clean: source/my_lib/clean
+source/clean: source/other_lib/clean
+.PHONY : source/clean
+
+#=============================================================================
+# Directory level rules for directory source/my_lib
+
+# Recursive "all" directory target.
+source/my_lib/all: source/my_lib/CMakeFiles/Library.dir/all
+.PHONY : source/my_lib/all
+
+# Recursive "preinstall" directory target.
+source/my_lib/preinstall:
+.PHONY : source/my_lib/preinstall
+
+# Recursive "clean" directory target.
+source/my_lib/clean: source/my_lib/CMakeFiles/Library.dir/clean
+.PHONY : source/my_lib/clean
+
+#=============================================================================
+# Directory level rules for directory source/other_lib
+
+# Recursive "all" directory target.
+source/other_lib/all: source/other_lib/CMakeFiles/OLIB.dir/all
+.PHONY : source/other_lib/all
+
+# Recursive "preinstall" directory target.
+source/other_lib/preinstall:
+.PHONY : source/other_lib/preinstall
+
+# Recursive "clean" directory target.
+source/other_lib/clean: source/other_lib/CMakeFiles/OLIB.dir/clean
+.PHONY : source/other_lib/clean
+
+#=============================================================================
+# Target rules for target source/my_lib/CMakeFiles/Library.dir
 
 # All Build rule for target.
-CMakeFiles/Library.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Library.dir/build.make CMakeFiles/Library.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Library.dir/build.make CMakeFiles/Library.dir/build
+source/my_lib/CMakeFiles/Library.dir/all:
+	$(MAKE) $(MAKESILENT) -f source/my_lib/CMakeFiles/Library.dir/build.make source/my_lib/CMakeFiles/Library.dir/depend
+	$(MAKE) $(MAKESILENT) -f source/my_lib/CMakeFiles/Library.dir/build.make source/my_lib/CMakeFiles/Library.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-Udemy/build/CMakeFiles" --progress-num=3,4 "Built target Library"
-.PHONY : CMakeFiles/Library.dir/all
+.PHONY : source/my_lib/CMakeFiles/Library.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/Library.dir/rule: cmake_check_build_system
+source/my_lib/CMakeFiles/Library.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-Udemy/build/CMakeFiles" 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Library.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 source/my_lib/CMakeFiles/Library.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-Udemy/build/CMakeFiles" 0
-.PHONY : CMakeFiles/Library.dir/rule
+.PHONY : source/my_lib/CMakeFiles/Library.dir/rule
 
 # Convenience name for target.
-Library: CMakeFiles/Library.dir/rule
+Library: source/my_lib/CMakeFiles/Library.dir/rule
 .PHONY : Library
 
 # clean rule for target.
-CMakeFiles/Library.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Library.dir/build.make CMakeFiles/Library.dir/clean
-.PHONY : CMakeFiles/Library.dir/clean
+source/my_lib/CMakeFiles/Library.dir/clean:
+	$(MAKE) $(MAKESILENT) -f source/my_lib/CMakeFiles/Library.dir/build.make source/my_lib/CMakeFiles/Library.dir/clean
+.PHONY : source/my_lib/CMakeFiles/Library.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/OLIB.dir
+# Target rules for target source/other_lib/CMakeFiles/OLIB.dir
 
 # All Build rule for target.
-CMakeFiles/OLIB.dir/all: CMakeFiles/Library.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OLIB.dir/build.make CMakeFiles/OLIB.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OLIB.dir/build.make CMakeFiles/OLIB.dir/build
+source/other_lib/CMakeFiles/OLIB.dir/all: source/my_lib/CMakeFiles/Library.dir/all
+	$(MAKE) $(MAKESILENT) -f source/other_lib/CMakeFiles/OLIB.dir/build.make source/other_lib/CMakeFiles/OLIB.dir/depend
+	$(MAKE) $(MAKESILENT) -f source/other_lib/CMakeFiles/OLIB.dir/build.make source/other_lib/CMakeFiles/OLIB.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-Udemy/build/CMakeFiles" --progress-num=5,6 "Built target OLIB"
-.PHONY : CMakeFiles/OLIB.dir/all
+.PHONY : source/other_lib/CMakeFiles/OLIB.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/OLIB.dir/rule: cmake_check_build_system
+source/other_lib/CMakeFiles/OLIB.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-Udemy/build/CMakeFiles" 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/OLIB.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 source/other_lib/CMakeFiles/OLIB.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-Udemy/build/CMakeFiles" 0
-.PHONY : CMakeFiles/OLIB.dir/rule
+.PHONY : source/other_lib/CMakeFiles/OLIB.dir/rule
 
 # Convenience name for target.
-OLIB: CMakeFiles/OLIB.dir/rule
+OLIB: source/other_lib/CMakeFiles/OLIB.dir/rule
 .PHONY : OLIB
 
 # clean rule for target.
-CMakeFiles/OLIB.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/OLIB.dir/build.make CMakeFiles/OLIB.dir/clean
-.PHONY : CMakeFiles/OLIB.dir/clean
+source/other_lib/CMakeFiles/OLIB.dir/clean:
+	$(MAKE) $(MAKESILENT) -f source/other_lib/CMakeFiles/OLIB.dir/build.make source/other_lib/CMakeFiles/OLIB.dir/clean
+.PHONY : source/other_lib/CMakeFiles/OLIB.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/Exec.dir
+# Target rules for target app/CMakeFiles/Exec.dir
 
 # All Build rule for target.
-CMakeFiles/Exec.dir/all: CMakeFiles/Library.dir/all
-CMakeFiles/Exec.dir/all: CMakeFiles/OLIB.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Exec.dir/build.make CMakeFiles/Exec.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Exec.dir/build.make CMakeFiles/Exec.dir/build
+app/CMakeFiles/Exec.dir/all: source/my_lib/CMakeFiles/Library.dir/all
+app/CMakeFiles/Exec.dir/all: source/other_lib/CMakeFiles/OLIB.dir/all
+	$(MAKE) $(MAKESILENT) -f app/CMakeFiles/Exec.dir/build.make app/CMakeFiles/Exec.dir/depend
+	$(MAKE) $(MAKESILENT) -f app/CMakeFiles/Exec.dir/build.make app/CMakeFiles/Exec.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-Udemy/build/CMakeFiles" --progress-num=1,2 "Built target Exec"
-.PHONY : CMakeFiles/Exec.dir/all
+.PHONY : app/CMakeFiles/Exec.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/Exec.dir/rule: cmake_check_build_system
+app/CMakeFiles/Exec.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-Udemy/build/CMakeFiles" 6
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Exec.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app/CMakeFiles/Exec.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-Udemy/build/CMakeFiles" 0
-.PHONY : CMakeFiles/Exec.dir/rule
+.PHONY : app/CMakeFiles/Exec.dir/rule
 
 # Convenience name for target.
-Exec: CMakeFiles/Exec.dir/rule
+Exec: app/CMakeFiles/Exec.dir/rule
 .PHONY : Exec
 
 # clean rule for target.
-CMakeFiles/Exec.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Exec.dir/build.make CMakeFiles/Exec.dir/clean
-.PHONY : CMakeFiles/Exec.dir/clean
+app/CMakeFiles/Exec.dir/clean:
+	$(MAKE) $(MAKESILENT) -f app/CMakeFiles/Exec.dir/build.make app/CMakeFiles/Exec.dir/clean
+.PHONY : app/CMakeFiles/Exec.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

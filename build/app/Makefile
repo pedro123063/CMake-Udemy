@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-Udemy/build/CMakeFiles" "/mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-Udemy/build//CMakeFiles/progress.marks"
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
+	cd "/mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-Udemy/build" && $(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-Udemy/build/CMakeFiles" "/mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-Udemy/build/app//CMakeFiles/progress.marks"
+	cd "/mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-Udemy/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-Udemy/build/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clean
+	cd "/mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-Udemy/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,57 +103,56 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd "/mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-Udemy/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd "/mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-Udemy/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd "/mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-Udemy/build" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named Library
+# Convenience name for target.
+app/CMakeFiles/Exec.dir/rule:
+	cd "/mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-Udemy/build" && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app/CMakeFiles/Exec.dir/rule
+.PHONY : app/CMakeFiles/Exec.dir/rule
 
-# Build rule for target.
-Library: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Library
-.PHONY : Library
-
-# fast build rule for target.
-Library/fast:
-	$(MAKE) $(MAKESILENT) -f source/my_lib/CMakeFiles/Library.dir/build.make source/my_lib/CMakeFiles/Library.dir/build
-.PHONY : Library/fast
-
-#=============================================================================
-# Target rules for targets named OLIB
-
-# Build rule for target.
-OLIB: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 OLIB
-.PHONY : OLIB
-
-# fast build rule for target.
-OLIB/fast:
-	$(MAKE) $(MAKESILENT) -f source/other_lib/CMakeFiles/OLIB.dir/build.make source/other_lib/CMakeFiles/OLIB.dir/build
-.PHONY : OLIB/fast
-
-#=============================================================================
-# Target rules for targets named Exec
-
-# Build rule for target.
-Exec: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Exec
+# Convenience name for target.
+Exec: app/CMakeFiles/Exec.dir/rule
 .PHONY : Exec
 
 # fast build rule for target.
 Exec/fast:
-	$(MAKE) $(MAKESILENT) -f app/CMakeFiles/Exec.dir/build.make app/CMakeFiles/Exec.dir/build
+	cd "/mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-Udemy/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/Exec.dir/build.make app/CMakeFiles/Exec.dir/build
 .PHONY : Exec/fast
+
+main.o: main.cpp.o
+.PHONY : main.o
+
+# target to build an object file
+main.cpp.o:
+	cd "/mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-Udemy/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/Exec.dir/build.make app/CMakeFiles/Exec.dir/main.cpp.o
+.PHONY : main.cpp.o
+
+main.i: main.cpp.i
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cpp.i:
+	cd "/mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-Udemy/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/Exec.dir/build.make app/CMakeFiles/Exec.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cpp.s:
+	cd "/mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-Udemy/build" && $(MAKE) $(MAKESILENT) -f app/CMakeFiles/Exec.dir/build.make app/CMakeFiles/Exec.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 # Help Target
 help:
@@ -164,8 +163,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Exec"
-	@echo "... Library"
-	@echo "... OLIB"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 
@@ -177,6 +177,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd "/mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-Udemy/build" && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

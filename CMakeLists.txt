@@ -2,26 +2,35 @@
 # 1)mkdir build
 # 2)cd build        // easy to forget but very important
 # 3) cmake ..       //tells the cmake which CMakeLists.txt is our main one when inside build, meaning, the one in the father dir
-# 4) cmake --build .      //specifies that the current directory(should be build) is the directory in which build the executables and sorts
+# 4) cmake --build .      //specifies that the current directory(should be "build") is the directory in which build the executables and sorts
 # 5) ./<executable_name>
+
+
+#TIPS:
+#   If you want CMake to build only one of the targets(to see if it's compilling, for example), use 
+#                                        "cmake --build <build_path> --target <target_to_build_name>"
+
 cmake_minimum_required(VERSION 3.22)
 
 project(CppProjectTemplate 
 VERSION 1.0.0 
 LANGUAGES C CXX)
 
-add_library(Library STATIC my_lib.cpp)  #when creating a lib file in your CMake project 
-                                        #that will be used by another, you'll need to 
-                                        #indicate to CMake that there's that lib to manage  
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
-add_library(OLIB STATIC other_lib.cpp)
+option(COMPILE_EXECUTABLE "wether to compile the executable" OFF)# can be toggled on when configuring the project
+                                                                 # ("cmake .." step) and then adding 
+                                                                 #" -D<option_name>=<value>"
+                                                                 #note: there's no space between -D and <option_name>
 
-add_executable(Exec main.cpp)   #first <executable_name> then <source_main> 
 
-target_link_libraries(OLIB PUBLIC Library)  # if i want to link a lib to another,
-                                            # i link them with this command. no need do do it when 
-                                            #linking the exec to a lib
-                                            
-target_link_libraries(Exec PUBLIC OLIB)  #when you use a lib on a file, you'll need to 
-                                            #link the first to the former. For that use this with the
-                                            #nicknames you used on CMakeLists (not the literal file names!!).
+add_subdirectory(source)    #should come first, since app depends on it
+if(COMPILE_EXECUTABLE)
+    add_subdirectory(app)   # obs: if your file to become an executable is inside a subdirectory(like app, for example)
+                        # then, it will be on a subdirectory inside build too. As such, you'll need to adjust the path 
+                        # when calling the executble on the ./ to run the project. If the file is inside a tree, probably the tree will be replicated too
+else()
+    message("W/o exe. compilling")
+endif()

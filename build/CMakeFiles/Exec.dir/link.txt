@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/Exec.dir/main.cpp.o -o Exec  libOLIB.a libLibrary.a 

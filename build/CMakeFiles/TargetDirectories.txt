@@ -1,5 +1,13 @@
-/mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-Udemy/build/CMakeFiles/Library.dir
-/mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-Udemy/build/CMakeFiles/OLIB.dir
-/mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-Udemy/build/CMakeFiles/Exec.dir
 /mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-Udemy/build/CMakeFiles/edit_cache.dir
 /mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-Udemy/build/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-Udemy/build/source/CMakeFiles/edit_cache.dir
+/mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-Udemy/build/source/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-Udemy/build/source/my_lib/CMakeFiles/Library.dir
+/mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-Udemy/build/source/my_lib/CMakeFiles/edit_cache.dir
+/mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-Udemy/build/source/my_lib/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-Udemy/build/source/other_lib/CMakeFiles/OLIB.dir
+/mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-Udemy/build/source/other_lib/CMakeFiles/edit_cache.dir
+/mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-Udemy/build/source/other_lib/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-Udemy/build/app/CMakeFiles/Exec.dir
+/mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-Udemy/build/app/CMakeFiles/edit_cache.dir
+/mnt/c/Users/Pedro/OneDrive/Documentos/CMake/course 1/CMake-Udemy/build/app/CMakeFiles/rebuild_cache.dir
